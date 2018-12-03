@@ -48,28 +48,28 @@ router.delete('/:id', (req, res, next) => {
   });
 });
 
-/* image */
-router.post('/upload/main/:id', (req, res, next) => {
-  const id = req.params.id;
-  places.findById(req.params.id).then((place) => {
-    places.update(req.body).then((place) => {
-      res.json(place);
-    });
-  }).catch( (error) => {
-    res.json({message: 'image_main post err'});
-  });
-});
-
-
-router.post('/upload/sub/:id', (req, res, next) => {
-  const id = req.params.id;
-  places.findById(req.params.id).then((place) => {
-    places.update(req.body).then((place) => {
-      res.json(place);
-    });
-  }).catch( (error) => {
-    res.json({message: 'image_sub post err'});
-  });
-});
+// /* image */
+// router.post('/upload/main/:id', (req, res, next) => {
+//   const id = req.params.id;
+//   places.findById(req.params.id).then((place) => {
+//     places.update(req.body).then((place) => {
+//       res.json(place);
+//     });
+//   }).catch( (error) => {
+//     res.json({message: 'image_main post err'});
+//   });
+// });
+//
+//
+// router.post('/upload/sub/:id', (req, res, next) => {
+//   const id = req.params.id;
+//   places.findById(req.params.id).then((place) => {
+//     places.update(req.body).then((place) => {
+//       res.json(place);
+//     });
+//   }).catch( (error) => {
+//     res.json({message: 'image_sub post err'});
+//   });
+// });
 
 module.exports = router;

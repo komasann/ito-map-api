@@ -1,13 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const places = sequelize.define('places', {
+    regions_id: DataTypes.INTEGER,
     title: DataTypes.STRING,
     lat: DataTypes.FLOAT,
     lon: DataTypes.FLOAT,
     headline: DataTypes.STRING,
-    point: DataTypes.STRING,
-    description: DataTypes.STRING,
-    image: DataTypes.STRING
+    description: DataTypes.STRING
   }, {
     underscored: true,
   });

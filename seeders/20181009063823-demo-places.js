@@ -8,9 +8,7 @@ module.exports = {
         lat: 0.0,
         lon: 0.0,
         headline: '',
-        point: '',
         description: '',
-        image: ''
       }
     ], {});
   },
