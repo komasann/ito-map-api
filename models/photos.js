@@ -6,6 +6,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   });
+  const places = sequelize.define('places');
+  places.hasMany(photos, {foreignKey: 'places_id', sourceKey: 'id'});
+  photos.belongsTo(places, {foreignKey: 'places_id', sourceKey: 'id'});
+  //主キー(targetKey)：places　外部キー(foreignKey)photos
+
   photos.associate = function(models) {
     // associations can be defined here
   };
