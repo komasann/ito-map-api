@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const places = require('./routes/places');
+const regions = require('./routes/regions');
+const photos = require('./routes/photos');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -14,6 +16,8 @@ app.get('/', function (req, res) {
 });
 
 app.use('/places', places);
+app.use('/regions', regions);
+app.use('/photos', photos);
 
 /**
  * 一覧取得
