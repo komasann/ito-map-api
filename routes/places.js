@@ -3,13 +3,24 @@ const places = require('../models').places;
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  places.findAll().then((places) => {
-    res.json(places);
-  }).catch((err) => {
-    res.json({
-      message: 'get err'
+  //?regions_id=1 でIDのplacesが表示される
+  if (req.query.regions_id) {
+    places.findAll({
+      'where': {
+        'regions_id': req.query.regions_id
+      }
+    }).then((place) => {
+      res.json(place);
     });
-  });
+  } else {
+    places.findAll().then((places) => {
+      res.json(places);
+    }).catch((err) => {
+      res.json({
+        message: 'get err'
+      });
+    });
+  }
 });
 
 router.get('/:id', (req, res, next) => {
